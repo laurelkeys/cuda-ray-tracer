@@ -1,0 +1,9 @@
+.vs/
+.vscode/settings.json
+
+*.bat
+build/
+
+*.ppm
+!tests/*.ref.ppm
+

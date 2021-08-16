@@ -1,0 +1,24 @@
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+*.c text eol=lf
+*.cu text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.cuh text eol=lf
+*.hpp text eol=lf
+
+*.py text eol=lf
+
+*.md text eol=lf
+*.txt text eol=lf
+
+*.in text eol=lf
+*.out text eol=lf
+
+*.sh text eol=lf
+*.pbs text eol=lf
+*.yml text eol=lf
+Dockerfile text eol=lf
+
+*.clang-format text eol=lf

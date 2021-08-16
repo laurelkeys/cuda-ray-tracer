@@ -1,0 +1,67 @@
+{
+    Language: Cpp,
+    IndentWidth: 4,
+    ColumnLimit: 90,
+    PointerAlignment: Right,
+    AccessModifierOffset: -4,
+    ContinuationIndentWidth: 4,
+
+    AlignAfterOpenBracket: AlwaysBreak,
+    AlignConsecutiveAssignments: false,
+    AlignConsecutiveMacros: false,
+    AlignEscapedNewlines: Left,
+    AlignOperands: true,
+    AlignTrailingComments: false,
+
+    AllowAllArgumentsOnNextLine: true,
+    AllowAllConstructorInitializersOnNextLine: true,
+    AllowAllParametersOfDeclarationOnNextLine: true,
+    AllowShortBlocksOnASingleLine: Always,
+    AllowShortCaseLabelsOnASingleLine: true,
+    AllowShortFunctionsOnASingleLine: Inline,
+    AllowShortIfStatementsOnASingleLine: WithoutElse,
+    AllowShortLambdasOnASingleLine: Inline,
+    AllowShortLoopsOnASingleLine: true,
+
+    AlwaysBreakAfterReturnType: None,
+    AlwaysBreakBeforeMultilineStrings: false,
+    AlwaysBreakTemplateDeclarations: Yes,
+
+    BinPackArguments: false,
+    BinPackParameters: false,
+
+    BreakBeforeBinaryOperators: NonAssignment,
+    BreakBeforeBraces: Attach,
+    BreakBeforeTernaryOperators: true,
+    BreakConstructorInitializers: BeforeComma,
+    BreakInheritanceList: BeforeComma,
+
+    CompactNamespaces: false,
+
+    Cpp11BracedListStyle: false,
+
+    DeriveLineEnding: true,
+    DerivePointerAlignment: false,
+
+    IndentCaseLabels: true,
+    IndentPPDirectives: AfterHash,
+
+    KeepEmptyLinesAtTheStartOfBlocks: false,
+
+    NamespaceIndentation: Inner,
+
+    SortIncludes: true,
+
+    SpaceAfterCStyleCast: true,
+    SpaceBeforeCpp11BracedList: true,
+    SpaceBeforeCtorInitializerColon: true,
+    SpaceBeforeParens: ControlStatements,
+    SpaceBeforeRangeBasedForLoopColon: true,
+    SpaceBeforeSquareBrackets: false,
+    SpaceInEmptyBlock: true,
+    SpaceInEmptyParentheses: false,
+
+    SpacesInConditionalStatement: false,
+    SpacesInParentheses: false,
+    SpacesInSquareBrackets: false,
+}

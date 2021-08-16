@@ -1,0 +1,78 @@
+# Note: use this if running on 'w-docker' instead (also,
+# remember to add 'options: --gpu all' if running on it).
+# | name: 'Build and test'
+# | description: '(Re-)build and test project'
+# | runs:
+# |   using: 'docker'
+# |   image: 'Dockerfile'
+
+name: 'Build and test'
+description: '(Re-)build and test project'
+runs:
+  using: "composite"
+  steps:
+    - name: Create a clean build environment
+      shell: bash
+      run: |
+        cmake -E remove -f build
+        cmake -E make_directory build
+
+    - name: Configure CMake and set CUDA arch
+      shell: bash
+      run: |
+        cmake -S . -B build -DARCH=35 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
+
+    - name: Compile
+      shell: bash
+      run: |
+        cmake --build build
+
+    - name: Run serial
+      shell: bash
+      run: |
+        echo
+        echo "::: Running (serial) :::"
+        for i in 1 2 3 4 5 6; do
+            ./build/serial $i output/ser.$i.ppm
+            echo "----------------------------------"
+        done
+
+    - name: Run parallel
+      shell: bash
+      run: |
+        echo
+        echo "::: Running (parallel) :::"
+        for i in 1 2 3 4 5 6; do
+            ./build/parallel $i output/par.$i.ppm
+            echo "----------------------------------"
+        done
+
+    - name: Compare serial results to serial reference
+      shell: bash
+      run: |
+        echo
+        echo "::: Comparing (serial to serial) :::"
+        for i in 1 2 3 4 5 6; do
+            python3 compare.py $i output/ser.$i.ppm tests/ser.$i.ref.ppm
+            echo "----------------------------------"
+        done
+
+    - name: Compare parallel results to parallel reference
+      shell: bash
+      run: |
+        echo
+        echo "::: Comparing (parallel to parallel) :::"
+        for i in 1 2 3 4 5 6; do
+            python3 compare.py $i output/par.$i.ppm tests/par.$i.ref.ppm
+            echo "----------------------------------"
+        done
+
+    - name: Compare results across themselves
+      shell: bash
+      run: |
+        echo
+        echo "::: Comparing (serial to parallel) :::"
+        for i in 1 2 3 4 5 6; do
+            python3 compare.py $i output/ser.$i.ppm output/par.$i.ppm
+            echo "----------------------------------"
+        done

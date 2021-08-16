@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            /*
+            "name": "Linux",
+            */
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                /*
+                "/mnt/d/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.1/include"
+                */
+                "D:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.1/include"
+            ],
+            "defines": [
+                "_VSCODE"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    /*
+                    "/mnt/d/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.1/include"
+                    */
+                    "D:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.1/include"
+                ]
+            },
+            /*
+            "compilerPath": "/usr/bin/clang",
+            "intelliSenseMode": "clang-x64",
+            */
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
